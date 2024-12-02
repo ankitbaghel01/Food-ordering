@@ -38,7 +38,7 @@ const Header = () => {
       </div>
 
       {/* Online Button with Dropdown Icon */}
-      <div className="relative text-gray-600">
+      <div className="relative text-gray-600 left-5">
         <div
           className="border rounded-full text-gray-600 px-4 py-2 flex items-center gap-2 cursor-pointer"
           onClick={toggleDropdown}

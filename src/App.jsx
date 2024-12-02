@@ -1,8 +1,8 @@
 import React from 'react';
-import Sidebar from './components/Sidebar.jsx';
-import Header from './components/Header.jsx';
+import Sidebar from './components/Sidebar/Sidebar.jsx';
+import Header from './components/Header/Header.jsx';
 import Tabs from './components/Tabs.jsx';
-import OrderCard from './components/OrderCard.jsx';
+import OrderCard from './components/Order/OrderCard.jsx';
 import ProgressTracker from './components/ProgressTracker.jsx';
 
 const App = () => {
@@ -17,12 +17,17 @@ const App = () => {
   };
 
   return (
-    <div className="flex">
-      <Sidebar />
-      <div className="flex-1 bg-gray-100">
+    <div className="flex h-screen">
+      {/* Sidebar: Fixed height with scroll */}
+      <Sidebar className="w-64 bg-white shadow-md h-screen overflow-y-auto" />
+      
+      {/* Main Content */}
+      <div className="flex-1 bg-gray-100 flex flex-col">
         <Header />
         <Tabs />
-        <div className="p-4">
+        <div className="p-4 overflow-y-auto flex-grow">
+          {/* Scrollable Content */}
+          <OrderCard order={sampleOrder} />
           <OrderCard order={sampleOrder} />
           <OrderCard order={sampleOrder} />
         </div>
